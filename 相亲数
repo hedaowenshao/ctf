@@ -1,0 +1,39 @@
+#define N 10000
+#include <stdlib.h>
+
+ istwins(int m,int n)
+{
+ int i,j,k; unsigned s[N];
+ //system("CLS");//清屏
+
+ for(i=m;i<n;i++)
+    {
+        for(j=1,s[i]=0;j<i;j++)
+           if(i%j==0)
+             {s[i]+=j;}
+    }
+
+ for(i=m;i<n;i++)
+ {
+     for(j=i+1;j<n;j++)
+       if((i==s[j])&&(j==s[i]))
+       {
+         printf("%d: ",i);
+         //for(k=1;k<i;k++)
+            //{if(i%k==0) printf("%d ",k); }
+         printf("\n");
+         printf("%d: ",j);
+        // for(k=1;k<j;k++)
+            // if(j%k==0) printf("%d ",k);
+         printf("\n\n");
+       }
+ }
+
+}
+main()
+{
+    int m,n;
+    printf("请输入两个数字:\n");
+    scanf("%d %d",&m,&n);
+    istwins(m,n);
+    }
